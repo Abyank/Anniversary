@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #fff0f5;
+  color: #333;
+  text-align: center;
+}
+
+nav {
+  background: #ff6699;
+  padding: 10px;
+}
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+.center {
+  margin-top: 15vh;
+}
+
+.title {
+  font-size: 3em;
+  color: #ff3366;
+}
+.subtitle {
+  font-size: 1.5em;
+  color: #cc0066;
+}
+
+.heart-anim {
+  font-size: 4em;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.gallery {
+  margin: 30px auto;
+  max-width: 800px;
+}
+
+.notes {
+  margin: 30px auto;
+  max-width: 600px;
+  text-align: left;
+}
+.notes ul {
+  list-style: none;
+  padding: 0;
+}
+.notes li {
+  background: #ffe6f0;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+
+/* HEARTS CONTAINER */
+.hearts {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* HEARTS THEMSELVES */
+.heart {
+  position: absolute;
+  bottom: -40px;
+  width: 30px;
+  height: 30px;
+  background: red;
+  transform: rotate(-45deg);
+  animation: floatUp 8s linear forwards;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 10;
+}
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: red;
+  border-radius: 50%;
+}
+.heart::before { top: -15px; left: 0; }
+.heart::after  { top: 0; left: 15px; }
+
+@keyframes floatUp {
+  from { transform: translateY(40vh) rotate(-45deg); opacity: 0.9; }
+  to   { transform: translateY(-110vh) rotate(-45deg); opacity: 0; }
+}
+.floating-heart {
+  position: fixed;
+  bottom: -20px;
+  color: pink;
+  animation: floatUp 6s linear forwards;
+  z-index: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-110vh); opacity: 0; }
+}
+
+.love-note {
+  position: absolute;
+  background: rgba(255, 182, 193, 0.9);
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 1.2em;
+  color: #fff;
+  pointer-events: none;
+  animation: fadePop 2s forwards;
+}
+
+@keyframes fadePop {
+  0% { transform: scale(0.5); opacity: 0; }
+  30% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0; }
+}
+

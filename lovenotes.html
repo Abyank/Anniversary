@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .notes {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.8;
+      font-size: 1.2em;
+      color: #333;
+      text-align: center;
+    }
+    .note {
+      margin-bottom: 25px;
+      padding: 15px;
+      background: rgba(255, 192, 203, 0.2);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      color: pink;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      bottom: -10px;
+      z-index: -1;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="screenshots.html">Screenshots</a>
+      <a href="clips.html">Clips</a>
+      <a href="lovenotes.html">Love Notes</a>
+      <a href="notes.html">Notes</a>
+      <a href="ending.html">Ending</a>
+    </nav>
+    
+
+  </nav>
+
+  <section class="notes">
+    <h2>Reasons I Love You, Mathu ❤️</h2>
+
+    <div class="note">You’re my safe place. No matter how chaotic life gets, talking to you feels like coming home.</div>
+    <div class="note">You make me feel seen in ways I didn’t think were possible — like you notice every small detail about me and still choose to stay.</div>
+    <div class="note">I love the way you laugh — it’s my favorite sound in the world. It makes everything feel lighter.</div>
+    <div class="note">You’re beautiful in every way: not just in how you look, but in how deeply you care, love, and support people.</div>
+    <div class="note">You believed in me when I doubted myself. That’s something I’ll never forget.</div>
+    <div class="note">You’re not just my girlfriend; you’re my best friend, my biggest cheerleader, and my peace.</div>
+    <div class="note">I love the little things — the way you say my name, your texts, your voice, even your silences. Everything about you feels like magic.</div>
+    <div class="note">You make me want to be a better person, not because you ask me to, but because you inspire me.</div>
+    <div class="note">I can picture forever with you, and it doesn’t scare me — it makes me excited to grow old together.</div>
+    <div class="note">You’re the best part of every day. Even the worst days feel okay because I get to share them with you.</div>
+  </section>
+
+  <script>
+    // Animate notes in sequence
+    const notes = document.querySelectorAll('.note');
+    notes.forEach((note, index) => {
+      note.style.animationDelay = `${index * 0.4}s`;
+    });
+
+    // Floating hearts
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerText = '';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>

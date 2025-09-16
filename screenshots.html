@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screenshots</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      color: pink;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      bottom: -10px;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="screenshots.html">Screenshots</a>
+    <a href="clips.html">Clips</a>
+    <a href="lovenotes.html">Love Notes</a>
+    <a href="notes.html">Notes</a>
+    <a href="ending.html">Ending</a>
+  </nav>
+  
+
+  <section class="center">
+    <h2>Our Crush Phase Screenshots 💌</h2>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
+  <script>
+    // Load screenshots 1.png - 21.png
+    const gallery = document.getElementById("gallery");
+    for (let i = 1; i <= 21; i++) {
+      const img = document.createElement("img");
+      img.src = `images/${i}.png`; // assuming images are in /images folder
+      img.alt = `Screenshot ${i}`;
+      gallery.appendChild(img);
+    }
+
+    // Floating hearts animation
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = "";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 15 + "px";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+<p> theres more screenshots but i couldnt find them because the gc got deleted 😭</p>
+  <script src="script.js"></script>
+</body>
+</html>

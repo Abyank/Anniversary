@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clips</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .clips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .clips-grid video {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .clips-grid video:hover {
+      transform: scale(1.05);
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      color: pink;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      bottom: -10px;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="screenshots.html">Screenshots</a>
+    <a href="clips.html">Clips</a>
+    <a href="lovenotes.html">Love Notes</a>
+    <a href="notes.html">Notes</a>
+    <a href="ending.html">Ending</a>
+  </nav>
+  
+
+  <section class="center">
+    <h2>Our Cute Clips 🎥❤️</h2>
+    <div class="clips-grid" id="clips"></div>
+  </section>
+
+  <script>
+    // Load clips 1.mp4 - 21.mp4
+    const clips = document.getElementById("clips");
+    for (let i = 1; i <= 21; i++) {
+      const video = document.createElement("video");
+      video.src = `clips/${i}.mp4`; // assumes videos are inside /clips
+      video.controls = true;
+      video.alt = `Clip ${i}`;
+      clips.appendChild(video);
+    }
+
+    // Floating hearts animation
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = "";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 15 + "px";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

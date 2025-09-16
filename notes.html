@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    }
+    .notes-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.8;
+      font-size: 1.2em;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .note {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #fff0f6;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .note.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="screenshots.html">Screenshots</a>
+    <a href="clips.html">Clips</a>
+    <a href="lovenotes.html">Love Notes</a>
+    <a href="notes.html">Notes</a>
+    <a href="ending.html">Ending</a>
+  </nav>
+
+  <section class="center">
+    <h2>Confessions from My Heart</h2>
+    <div class="notes-container">
+      <div class="note">Mathu, there were nights I stayed up until sunrise writing about you in my notes. I was so lost, so tired of everything, but the thought of you kept me pushing forward.</div>
+      <div class="note">I remember staring at your profile picture for hours, whispering to myself that I can’t lose you. That no matter how much it hurt, I’d hold on to us forever.</div>
+      <div class="note">When Rida told my parents and we couldn’t talk, I felt like I lost a part of myself, I wrote pages in my notes app begging for time to pass, for you to stay. I thought you’d stop loving me. but I couldn’t stop loving you.</div>
+      <div class="note">I told myself: “Just one more day, just survive one more day. You’ll hear her voice again. You’ll feel her love again.” You’re the reason I’m still here.</div>
+      <div class="note">I’ve never felt pain like that before, but I’ve also never felt love like this. That phase taught me that what we have is stronger than anything in this world.</div>
+      <div class="note">You’ve been my lifeline. You saved me when I couldn’t save myself. Mathu, I owe you my heart, my happiness, my life.</div>
+      <div class="note">I love you more than words could ever hold. More than all the tears I cried missing you. More than all the nights I spent writing about you. More than anything.</div>
+      <div class="note">This is more than love, Mathu. You are the reason I stayed. You’re the proof that even in my darkest days, something beautiful was waiting for me. :heart:</div>
+    </div>
+  </section>
+
+  <script>
+    // Fade-in on scroll
+    const notes = document.querySelectorAll('.note');
+    const revealNotes = () => {
+      notes.forEach(note => {
+        const rect = note.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          note.classList.add('show');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealNotes);
+    revealNotes();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

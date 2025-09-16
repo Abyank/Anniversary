@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Anniversary Mathu 💕</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Typewriter effect */
+    .typewriter {
+      display: inline-block;
+      border-right: 2px solid #ff6699;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(40, end), blink .8s infinite;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #cc0066;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    /* Glow effect */
+    .glow {
+      font-size: 1.5em;
+      color: #ff3399;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #ff99cc, 0 0 10px #ff6699; }
+      to   { text-shadow: 0 0 20px #ff3399, 0 0 30px #ff0066; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="screenshots.html">Screenshots</a>
+    <a href="clips.html">Clips</a>
+    <a href="lovenotes.html">Love Notes</a>
+    <a href="notes.html">Notes</a>
+    <a href="ending.html">Ending</a>
+  </nav>
+  
+
+  <section class="center">
+    <h1 class="typewriter">Happy 1st Anniversary, Mathu 💖</h1>
+    <p class="glow">From Abyan, with love.</p>
+  </section>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="music/song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
