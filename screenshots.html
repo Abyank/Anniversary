@@ -58,7 +58,7 @@
     const gallery = document.getElementById("gallery");
     for (let i = 1; i <= 21; i++) {
       const img = document.createElement("img");
-      img.src = `images/${i}.png`; // assuming images are in /images folder
+      img.src = "./images/" + i + ".png"; // <-- FIXED path
       img.alt = `Screenshot ${i}`;
       gallery.appendChild(img);
     }
@@ -79,7 +79,8 @@
     }
     setInterval(createHeart, 500);
   </script>
-<p> theres more screenshots but i couldnt find them because the gc got deleted 😭</p>
+
+  <p>Theres more screenshots but I couldn't find them because the GC got deleted 😭</p>
   <script src="script.js"></script>
 </body>
 </html>
