@@ -54,14 +54,14 @@
   </section>
 
   <script>
-    // Load screenshots 1.png - 21.png
-    const gallery = document.getElementById("gallery");
-    for (let i = 1; i <= 21; i++) {
-      const img = document.createElement("img");
-      img.src = "./images/" + i + ".png"; // <-- FIXED path
-      img.alt = `Screenshot ${i}`;
-      gallery.appendChild(img);
-    }
+   const gallery = document.getElementById("gallery");
+for (let i = 1; i <= 21; i++) {
+  const img = document.createElement("img");
+  img.src = "images/" + i + ".PNG"; // <-- changed extension to match your files
+  img.alt = `Screenshot ${i}`;
+  gallery.appendChild(img);
+}
+
 
     // Floating hearts animation
     function createHeart() {
