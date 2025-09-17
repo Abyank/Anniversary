@@ -39,3 +39,15 @@ if (window.location.pathname.includes("ending.html")) {
     }
   });
 }
+
+// Create audio element
+const bgAudio = new Audio("1.mp3"); // file is in the same directory as the page
+bgAudio.loop = true;               // loop the audio
+bgAudio.volume = 0.5;              // optional: set volume (0.0 to 1.0)
+bgAudio.autoplay = true;           // play automatically
+
+// Start playing
+bgAudio.play().catch(err => {
+  console.warn("Autoplay prevented by browser:", err);
+});
+
