@@ -42,34 +42,6 @@ if (window.location.pathname.includes("ending.html")) {
 
 
 
-
-const bgAudio = new Audio("1.mp3");
-bgAudio.loop = true;
-bgAudio.volume = 0.5;
-
-
-bgAudio.play().catch(() => {
-  console.warn("Autoplay blocked. Waiting for user interaction...");
- 
-  const button = document.createElement("button");
-  button.innerText = "▶ Play Music";
-  button.style.position = "fixed";
-  button.style.top = "50%";
-  button.style.left = "50%";
-  button.style.transform = "translate(-50%, -50%)";
-  button.style.padding = "15px 25px";
-  button.style.fontSize = "1.2em";
-  button.style.border = "none";
-  button.style.borderRadius = "10px";
-  button.style.background = "#ff6699";
-  button.style.color = "white";
-  button.style.cursor = "pointer";
-  document.body.appendChild(button);
-
-  button.addEventListener("click", () => {
-    bgAudio.play();
-    button.remove();
-  });
-});
-
-
+<audio autoplay loop style="display:none;">
+  <source src="1.mp3" type="audio/mpeg">
+</audio>
