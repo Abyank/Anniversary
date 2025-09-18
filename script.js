@@ -1,4 +1,4 @@
-// Floating hearts (all pages)
+
 function createFloatingHearts() {
   setInterval(() => {
     const heart = document.createElement('div');
@@ -14,10 +14,10 @@ function createFloatingHearts() {
   }, 800);
 }
 
-// Call floating hearts for all pages
+
 createFloatingHearts();
 
-// Click-to-pop hearts ONLY on ending page
+
 if (window.location.pathname.includes("ending.html")) {
   document.body.addEventListener("click", function (e) {
     if (e.target.classList.contains("floating-heart")) {
@@ -40,15 +40,36 @@ if (window.location.pathname.includes("ending.html")) {
   });
 }
 
-// Create audio element
-const bgAudio = new Audio("1.mp3"); // file is in the same directory as the page
-bgAudio.loop = true;               // loop the audio
-bgAudio.volume = 0.5;              // optional volume
-bgAudio.autoplay = true;           // play automatically
 
-// Start playing
-bgAudio.play().catch(err => {
-  console.warn("Autoplay prevented by browser:", err);
+
+
+const bgAudio = new Audio("1.mp3");
+bgAudio.loop = true;
+bgAudio.volume = 0.5;
+
+
+bgAudio.play().catch(() => {
+  console.warn("Autoplay blocked. Waiting for user interaction...");
+ 
+  const button = document.createElement("button");
+  button.innerText = "▶ Play Music";
+  button.style.position = "fixed";
+  button.style.top = "50%";
+  button.style.left = "50%";
+  button.style.transform = "translate(-50%, -50%)";
+  button.style.padding = "15px 25px";
+  button.style.fontSize = "1.2em";
+  button.style.border = "none";
+  button.style.borderRadius = "10px";
+  button.style.background = "#ff6699";
+  button.style.color = "white";
+  button.style.cursor = "pointer";
+  document.body.appendChild(button);
+
+  button.addEventListener("click", () => {
+    bgAudio.play();
+    button.remove();
+  });
 });
 
 
