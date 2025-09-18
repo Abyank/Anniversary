@@ -22,7 +22,7 @@
       transform: scale(1.05);
     }
 
-    /* Floating hearts */
+ 
     .heart {
       position: fixed;
       color: pink;
@@ -38,9 +38,8 @@
 </head>
 <body>
 <audio autoplay loop style="display:none;">
-  <source src="BTS (방탄소년단) Black Swan (Orchestra ver.) Instrumental.mp3" type="audio/mpeg">
+  <source src="1.mp3" type="audio/mpeg">
 </audio>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="screenshots.html">Screenshots</a>
@@ -57,17 +56,17 @@
   </section>
 
   <script>
-    // Load clips 1.mp4 - 21.mp4
+
     const clips = document.getElementById("clips");
     for (let i = 1; i <= 21; i++) {
       const video = document.createElement("video");
-      video.src = `clips/${i}.mp4`; // assumes videos are inside /clips
+      video.src = `clips/${i}.mp4`; 
       video.controls = true;
       video.alt = `Clip ${i}`;
       clips.appendChild(video);
     }
 
-    // Floating hearts animation
+
     function createHeart() {
       const heart = document.createElement("div");
       heart.classList.add("heart");
