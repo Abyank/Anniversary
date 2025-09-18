@@ -64,7 +64,7 @@ nav a:hover {
   font-size: 1.2em;
 }
 
-/* HEARTS CONTAINER */
+
 .hearts {
   position: fixed;
   inset: 0;
@@ -75,7 +75,7 @@ nav a:hover {
   z-index: 1;
 }
 
-/* HEARTS THEMSELVES */
+
 .heart {
   position: absolute;
   bottom: -40px;
