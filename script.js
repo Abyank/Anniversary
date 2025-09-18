@@ -1,4 +1,4 @@
-
+// Floating hearts (all pages)
 function createFloatingHearts() {
   setInterval(() => {
     const heart = document.createElement('div');
@@ -14,10 +14,10 @@ function createFloatingHearts() {
   }, 800);
 }
 
-
+// Call floating hearts for all pages
 createFloatingHearts();
 
-
+// Click-to-pop hearts ONLY on ending page
 if (window.location.pathname.includes("ending.html")) {
   document.body.addEventListener("click", function (e) {
     if (e.target.classList.contains("floating-heart")) {
@@ -39,9 +39,3 @@ if (window.location.pathname.includes("ending.html")) {
     }
   });
 }
-
-
-
-<audio autoplay loop style="display:none;">
-  <source src="1.mp3" type="audio/mpeg">
-</audio>
